@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}首页{% endblock %}
+
+
+{% block page_content %}
+
+<form class="form form-horizontal" method="post" role="form">
+  {{ form.hidden_tag() }}
+  {{ wtf.form_errors(form, hiddens="only") }}
+
+<div class="row">
+  <div class="col-lg-6">
+    <div class="input-group">
+    {{ wtf.form_field(form.price) }}
+    </div>
+  </div>
+
+  <div class="col-lg-6">
+    <div class="input-group">
+    {{ wtf.form_field(form.key_word) }}
+    </div>
+  </div>
+
+  {{ wtf.form_field(form.refresh) }}
+  {{ wtf.form_field(form.submit) }}
+</div>
+
+
+{% endblock %}
